@@ -85,7 +85,7 @@ stress --cpu 4 --io 4 --vm-bytes 1G --hdd 2
 <img src="https://github.com/user-attachments/assets/87468378-20a9-4188-8162-17df1886b165"/>
 <br/> From the list of options select cpu utilization <br/>
 <img src="https://github.com/user-attachments/assets/5089c4aa-5e01-4d87-8de2-cda403979609"/>
-<br/> Next at the Specify metric and conditions screen leave as static and define the threshold value <br/>
+<br/> Next at the specify metric and conditions screen leave as static and define the threshold value <br/>
 
 <img src="https://github.com/user-attachments/assets/9673ffe4-abe9-4190-a1eb-64d6c4081682"/>
 <br/> Since the threshold has been exceeded for the alarm it is visible and we should get notified from our SNS email that we configured earlier once the alarm has been created <br/>
@@ -104,7 +104,7 @@ stress --cpu 4 --io 4 --vm-bytes 1G --hdd 2
 <br/> Since the CPU utilization threshold was exceeded from the stress command the the alarm should notify the SNS email endpoint with the message chosen. Navigate to the SNS email you entered and confirm <br/>
 
 <img src="https://github.com/user-attachments/assets/bf6e63de-9002-4d7a-86db-85bf2990adc1"/>
-<br/> The alarm is working properly. Now view in console and confirm in <br/>
+<br/> The alarm is working properly. Now view in console and confirm <br/>
 <img src="https://github.com/user-attachments/assets/444436de-95b4-44df-b7de-b33673370798"/>
 
 
