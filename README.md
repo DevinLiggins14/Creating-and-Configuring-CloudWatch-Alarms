@@ -75,51 +75,54 @@ stress --cpu 4 --io 4 --vm-bytes 1G --hdd 2
 <br/> Confirm metrics are available in the monitoring section <br/>
 <img src="https://github.com/user-attachments/assets/578d92dc-fa60-4b86-9cbf-023e8f5d7f47"/>
 
-## Step 4: 
+## Step 4: Create a CloudWatch alarm
 
-<br/> <br/>
+<br/> Navigate to CloudWatch from the console and select create alarm <br/>
+
+<img src="https://github.com/user-attachments/assets/d7a77102-5fad-4e2b-b732-41b233ec7475"/>
+<br/> Next click select metric and copy and paste the EC2 instance ID to view available metrics <br/>
+<img src="https://github.com/user-attachments/assets/1a023c57-9606-43ef-9c96-2dd26237ac5d"/>
+<img src="https://github.com/user-attachments/assets/87468378-20a9-4188-8162-17df1886b165"/>
+<br/> From the list of options select cpu utilization <br/>
+<img src="https://github.com/user-attachments/assets/5089c4aa-5e01-4d87-8de2-cda403979609"/>
+<br/> Next at the Specify metric and conditions screen leave as static and define the threshold value <br/>
+
+<img src="https://github.com/user-attachments/assets/9673ffe4-abe9-4190-a1eb-64d6c4081682"/>
+<br/> Since the threshold has been exceeded for the alarm it is visible and we should get notified from our SNS email that we configured earlier once the alarm has been created <br/>
+<img src="https://github.com/user-attachments/assets/802c1248-33b8-4f5f-baa6-45e5bea1c69c"/>
+<br/> Next select next and choose select an existing SNS topic to pick the one made earlier <br/>
+<img src="https://github.com/user-attachments/assets/a608b7d3-be0d-4331-8af6-019818a21d8e"/>
+<br/> Click next and configure the alarm name and description for the endpoint <br/> 
+<img src="https://github.com/user-attachments/assets/67bf777f-3ffa-4dfe-9c65-f4515f93c9a8"/>
+<br/> Preview the message <br/>
+<img src="https://github.com/user-attachments/assets/0bfe86cc-5aaf-4148-a0e1-291c0a809ea7"/>
+<br/> Now click next, confirm configurations, and create alarm. (Note: the alarm states insufficent data because it has just been created) <br/>
+<img src="https://github.com/user-attachments/assets/c26818cf-ac26-4105-8ed8-c9da82645f35"/>
+
+## Step 5: Confirm alarm is working via SNS endpoint
+
+<br/> Since the CPU utilization threshold was exceeded from the stress command the the alarm should notify the SNS email endpoint with the message chosen. Navigate to the SNS email you entered and confirm <br/>
+
+<img src="https://github.com/user-attachments/assets/bf6e63de-9002-4d7a-86db-85bf2990adc1"/>
+<br/> The alarm is working properly. Now view in console and confirm in <br/>
+<img src="https://github.com/user-attachments/assets/444436de-95b4-44df-b7de-b33673370798"/>
+
+
+## Step 6: Kill the stress command 
+
+<br/> To test our CloudWatch alarm further go to the EC2 instance terminal and pres ctrl c to kill the stress command. Aferwards the alarm status should no longer state in alarm  <br/>
+
+<img src="https://github.com/user-attachments/assets/309a0c49-7605-4803-9152-e8fbef4b32ac"/>
+<br/> Now we can see that the state is OK <br/>
+<img src="https://github.com/user-attachments/assets/80c7f6e8-81ce-4a11-a772-9038b0c96fd4"/>
+<br/> Note: we will not recieved an email now that the cpu utilization has returned within the threashold because the alarm was set for if the condition of 85% cpu util has been reached to notify the SNS endpoint <br/>
+<br/> In summary we successfully created an EC2 instance, installed the stress package on the instance and ran it to mock cpu utilization, we configured a CloudWatch alarm and sucessfully tested the SNS endpoint. <br/> 
 
 <img src=""/>
 <img src=""/>
 <img src=""/>
-<img src=""/>
-<img src=""/>
 
-## Step
 
-<br/> <br/>
-
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-
-## Step
-
-<br/> <br/>
-
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-
-## Step
-
-<br/> <br/>
-
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-
-## Step
-
-<br/> <br/>
-
-<img src=""/>
 <img src=""/>
 <img src=""/>
 <img src=""/>
