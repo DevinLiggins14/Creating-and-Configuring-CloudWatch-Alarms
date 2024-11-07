@@ -110,7 +110,7 @@ stress --cpu 4 --io 4 --vm-bytes 1G --hdd 2
 
 ## Step 6: Kill the stress command 
 
-<br/> To test our CloudWatch alarm further go to the EC2 instance terminal and pres ctrl c to kill the stress command. Aferwards the alarm status should no longer state in alarm  <br/>
+<br/> To test our CloudWatch alarm further go to the EC2 instance terminal and press ctrl c to kill the stress command. Aferwards the alarm status should no longer state in alarm  <br/>
 
 <img src="https://github.com/user-attachments/assets/309a0c49-7605-4803-9152-e8fbef4b32ac"/>
 <br/> Now we can see that the state is OK <br/>
@@ -118,42 +118,3 @@ stress --cpu 4 --io 4 --vm-bytes 1G --hdd 2
 <br/> Note: we will not recieved an email now that the cpu utilization has returned within the threashold because the alarm was set for if the condition of 85% cpu util has been reached to notify the SNS endpoint <br/>
 <br/> In summary we successfully created an EC2 instance, installed the stress package on the instance and ran it to mock cpu utilization, we configured a CloudWatch alarm and sucessfully tested the SNS endpoint. <br/> 
 
-<img src=""/>
-<img src=""/>
-<img src=""/>
-
-
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-
-## Step
-
-<br/> <br/>
-
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-
-## Step
-
-<br/> <br/>
-
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-
-## Step
-
-<br/> <br/>
-
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
